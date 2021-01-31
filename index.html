@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn IPA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="quizContainer" class="container">
+    <div>
+      <div id="questionPlaceArt" class="question">What's the place of articulation of <span id="symbol"></span></div>
+      <label class="option" id="labial"><input type="radio" name="option" value="labial" /><span>Labial</span></label>
+      <label class="option" id="dental"><input type="radio" name="option" value="dental" /><span>Dental</span></label>
+      <label class="option" id="alveolar"><input type="radio" name="option" value="alveolar" /><span>Alveolar</span></label>
+      <label class="option" id="post-alveolar"><input type="radio" name="option" value="post-alveolar"/><span>Post-Alveolar</span></label>
+      <label class="option" id="palatal"><input type="radio" name="option" value="palatal" /><span>Palatal</span></label>
+      <label class="option" id="velar"><input type="radio" name="option" value="velar" /><span>Velar</span></label>
+      <label class="option" id="glottal"><input type="radio" name="option" value="glottal" /><span>Glottal</span></label>
+      <button id="nextQuestion" class="next-button" onclick="nextQuestion()">Próxima</button>
+      <button id="checkQuestion" class="next-button" onclick="verifyOption()">Checar</button>
+
+      
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
