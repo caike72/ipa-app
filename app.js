@@ -46,8 +46,6 @@ var generateConsonant = function () {
 
 console.log(randomConsonant)
 
-
-
 //pega opção escolhida pelo usuario 
 
 function verifyOption() {
