@@ -12,6 +12,8 @@
 
 - [] Repensar a forma como os fonemas são gerados, para que haja como checar o resultado e também gerar um novo numero com o clicar de um botão.
 
+- [] Fazer com que as cores dos backgrounds resetem assim que o click no botão "Next" é feito.
+
 # MODO 2 - MANNER OF ARTICULATION
 
 # MODO 3 - VOICING

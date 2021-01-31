@@ -35,11 +35,18 @@ consonants.push(new ConsonantClassification('/w/', 'velar', 'approximant', null)
 consonants.push(new ConsonantClassification('/h/', 'glottal', 'fricative', null))
 
 // gerando uma index aleatoria para que então seja selecionada uma consotante
-var randomConsonant = (consonants[(Math.floor(Math.random() * 25))])
+var randomConsonant = ''
+
+var generateConsonant = function () {
+  randomConsonant = (consonants[(Math.floor(Math.random() * 25))])
+
+  // coloca a consoante no span
+  document.getElementById('symbol').innerHTML = `What's the place of articulation of ${randomConsonant.symbol}?`
+}
+
 console.log(randomConsonant)
 
-// coloca a consoante no span
-document.getElementById('symbol').innerHTML = randomConsonant.symbol
+
 
 //pega opção escolhida pelo usuario 
 
