@@ -10,7 +10,7 @@
 
 - [x] Fazer com que a resposta certa retorne uma mensagem e manda outro fonema ou retorna uma mensagem de erro e dê a resposta correta para o usupario.
 
-- [] Repensar a forma como os fonemas são gerados, para que haja como checar o resultado e também gerar um novo numero com o clicar de um botão.
+- [] Repensar a forma como os fonemas são gerados, para que haja uma maneira de checar o resultado e também gerar um novo numero com o clicar de um botão.
 
 - [] Fazer com que as cores dos backgrounds resetem assim que o click no botão "Next" é feito.
 
