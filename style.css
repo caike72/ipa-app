@@ -3,8 +3,12 @@ body {
   background: rgb(143, 102, 255);
 }
 
+select {
+  outline: none;
+}
+
 .container {
-  height: 330px;
+  height: 200px;
   width: 1000px;
   position: absolute;
   top: 50%;
@@ -13,12 +17,22 @@ body {
   background: rgba(255,255, 255, 0.5);
   padding: 20px;
   border: 1px solid #08038c;
+  display: flex;
+  justify-content: center;
 }
+
 
 .question {
   padding-top: 20px;
   text-align: center;
   font-size: 36px;
+  color: #08038c;
+}
+
+.answer {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 22px;
   color: #08038c;
 }
 
@@ -31,11 +45,7 @@ body {
   margin: 10px 0 10px 10px;
   color: #000000;
   border-radius: 20px;
-}
 
-.option:hover {
-  background: #08038c;
-  color: #f6f6f6;
 }
 
 .next-button {
@@ -46,7 +56,6 @@ body {
   height: 35px;
   border-radius: 20px;
   cursor: pointer;
-  float: right;
   margin: 10px;
   font-family: 'Merriweather', serif;
 }
@@ -54,4 +63,16 @@ body {
 .next-button:hover {
   background: #08038c;
   color: #f6f6f6;
+}
+
+#credit {
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 90%;
+}
+
+a {
+  text-decoration: none;
+  color: yellow;
 }

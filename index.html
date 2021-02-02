@@ -8,25 +8,35 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png"/>
 </head>
 
 <body>
   <div id="quizContainer" class="container">
     <div>
       <div id="symbol" class="question" >Click the button below to generate a consonant.</div>
-      <label class="option" id="labial"><input type="radio" name="option" value="labial" /><span>Labial</span></label>
-      <label class="option" id="dental"><input type="radio" name="option" value="dental" /><span>Dental</span></label>
-      <label class="option" id="alveolar"><input type="radio" name="option" value="alveolar" /><span>Alveolar</span></label>
-      <label class="option" id="post-alveolar"><input type="radio" name="option" value="post-alveolar"/><span>Post-Alveolar</span></label>
-      <label class="option" id="palatal"><input type="radio" name="option" value="palatal" /><span>Palatal</span></label>
-      <label class="option" id="velar"><input type="radio" name="option" value="velar" /><span>Velar</span></label>
-      <label class="option" id="glottal"> <input type="radio" name="option" value="glottal" /><span>Glottal</span></label>
+      <select class="option" name="option" id="place">
+        <option value="">Select an answer</option>
+        <option value="alveolar">Alveolar</option>
+        <option value="bilabial">Bilabial</option>
+        <option value="dental">Dental</option>
+        <option value="glottal">Glottal</option>
+        <option value="labio-dental">Labio-dental</option>
+        <option value="post-alveolar">Post-alveolar</option>
+        <option value="palatal">Palatal</option>
+        <option value="velar">Velar</option>
+      </select>
+
       <button id="generateConsonant" class="next-button" onclick="generateConsonant()">Next</button>
       <button id="checkQuestion" class="next-button" onclick="verifyOption()">Check</button>
+      <div id="answer" class="answer"></div>
     </div>
 
   </div>
   <script src="app.js"></script>
+  <p id="credit">Created by: <a href="http://caikelaurentino.com.br">Caike Laurentino</a><br>
+    Github repo: <a href="https://github.com/caike72/ipa-app">ipa-app</a>
+  </p>
 </body>
 
 </html>

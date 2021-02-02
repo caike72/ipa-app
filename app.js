@@ -1,3 +1,8 @@
+/*
+    SCRIPT CREATED BY CAIKE LAURENTINO
+    CAIKELAURENTINO.COM.BR
+*/
+
 class ConsonantClassification {
   constructor(symbol, place, manner, voicing) {
     this.symbol = symbol
@@ -11,8 +16,8 @@ let consonants = Array()
 consonants.push(new ConsonantClassification('/m/', 'labial', 'nasal', null))
 consonants.push(new ConsonantClassification('/p/', 'labial', 'plosive', false))
 consonants.push(new ConsonantClassification('/b/', 'labial', 'plosive', true))
-consonants.push(new ConsonantClassification('/f/', 'labial', 'fricative', false))
-consonants.push(new ConsonantClassification('/v/', 'labial', 'fricative', true))
+consonants.push(new ConsonantClassification('/f/', 'labio-dental', 'fricative', false))
+consonants.push(new ConsonantClassification('/v/', 'labio-dental', 'fricative', true))
 consonants.push(new ConsonantClassification('/θ/', 'dental', 'fricative', false))
 consonants.push(new ConsonantClassification('/ð/', 'dental', 'fricative', true))
 consonants.push(new ConsonantClassification('/n/', 'alveolar', 'nasal', null))
@@ -34,6 +39,11 @@ consonants.push(new ConsonantClassification('/x/', 'velar', 'fricative', false))
 consonants.push(new ConsonantClassification('/w/', 'velar', 'approximant', null))
 consonants.push(new ConsonantClassification('/h/', 'glottal', 'fricative', null))
 
+// limpa o campo de dialogo
+function clearAnswer() {
+  document.getElementById('answer').innerHTML = ``
+}
+
 // gerando uma index aleatoria para que então seja selecionada uma consotante
 var randomConsonant = ''
 
@@ -42,32 +52,24 @@ var generateConsonant = function () {
 
   // coloca a consoante no span
   document.getElementById('symbol').innerHTML = `What's the place of articulation of ${randomConsonant.symbol}?`
+  clearAnswer()
+  document.getElementById('place').value = ''
 }
-
-console.log(randomConsonant)
 
 //pega opção escolhida pelo usuario 
 
 function verifyOption() {
-  var options = document.getElementsByName('option');
-  var placeValue
-  for (var i = 0; i < options.length; i++) {
-    if (options[i].checked) {
-      placeValue = options[i].value
-    }
-
-  }
+  var placeValue = document.getElementById('place')
 
   //retorno da resposta
 
-  console.log(placeValue)
-
-  if (placeValue === randomConsonant.place) {
-    document.getElementById(randomConsonant.place).style.background = 'green'
-  } else if (placeValue === undefined) {
-    alert('Please, select an answer.')
+  if (placeValue.value === randomConsonant.place) {
+    document.getElementById('answer').style.color = 'green'
+    document.getElementById('answer').innerHTML = `You're right! The consonant ${randomConsonant.symbol} is ${randomConsonant.place}.`
+  } else if (placeValue.value === '') {
+    document.getElementById('answer').innerHTML = `Please, select an answer first.`
   } else {
-    document.getElementById(placeValue).style.background = 'red'
-    document.getElementById(randomConsonant.place).style.background = 'green'
+    document.getElementById('answer').style.color = 'red'
+    document.getElementById('answer').innerHTML = `You're wrong! Try again or click the next button.`
   }
 }
