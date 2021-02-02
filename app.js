@@ -68,8 +68,12 @@ function verifyOption() {
     document.getElementById('answer').innerHTML = `You're right! The consonant ${randomConsonant.symbol} is ${randomConsonant.place}.`
   } else if (placeValue.value === '') {
     document.getElementById('answer').innerHTML = `Please, select an answer first.`
+  } else if (randomConsonant.place === undefined) {
+    document.getElementById('answer').innerHTML = `Please, select a consonant first.`
   } else {
     document.getElementById('answer').style.color = 'red'
     document.getElementById('answer').innerHTML = `You're wrong! Try again or click the next button.`
   }
 }
+
+onload(console.log(randomConsonant.place))
