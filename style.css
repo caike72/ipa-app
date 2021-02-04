@@ -1,51 +1,84 @@
-body {
-  font-family: 'Merriweather', serif;
-  background: rgb(143, 102, 255);
+* {
+  padding: 0;
+  margin: 0;
 }
 
-select {
-  outline: none;
+a {
+  text-decoration: none;
+  color: #01A787;
+}
+
+body {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  text-align: center;
 }
 
 .container {
-  height: 200px;
-  width: 1000px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  background: rgba(255,255, 255, 0.5);
-  padding: 20px;
-  border: 1px solid #08038c;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 100px calc(100vh - 150px) 50px;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
 }
 
+.item-1 {
+  grid-area: header;
+  background-color: #2C3043;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.item-2 {
+  grid-area: main;
+  background-color: #333850;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.item-3 {
+  grid-area: footer;
+  background-color: #2C3043;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.menu-item a {
+  font-size: 16px;
+}
+
+/* FIELDS STYLES */
 
 .question {
   padding-top: 20px;
-  text-align: center;
   font-size: 36px;
-  color: #08038c;
 }
 
 .answer {
   padding-top: 20px;
-  text-align: center;
   font-size: 22px;
-  color: #08038c;
 }
 
 .option {
-  width: 470px;
-  display: inline-block;
+  width: 100%;
   padding: 10px 0 10px 15px;
   vertical-align: middle;
   background: rgba(255, 255, 255, 0.5);
   margin: 10px 0 10px 10px;
   color: #000000;
-  border-radius: 20px;
-
+  border-radius: 10px;
 }
 
 .next-button {
@@ -57,22 +90,32 @@ select {
   border-radius: 20px;
   cursor: pointer;
   margin: 10px;
-  font-family: 'Merriweather', serif;
 }
 
 .next-button:hover {
-  background: #08038c;
+  background: #01A787;
   color: #f6f6f6;
 }
 
-#credit {
-  font-size: 14px;
-  color: white;
-  position: absolute;
-  top: 90%;
+.next-button:focus .option {
+  outline: none !important;
 }
 
-a {
-  text-decoration: none;
-  color: yellow;
+/* Menu */
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li>a {
+  background: #01A787;
+  padding: 15px;
+  margin: 10px;
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+}
+
+li>a:hover {
+  background-color: #1BC1A1;
 }

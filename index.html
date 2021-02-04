@@ -4,39 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn IPA</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>Learn IPA</title>
 </head>
 
-<body>
-  <div id="quizContainer" class="container">
-    <div>
-      <div id="symbol" class="question" >Click the button below to generate a consonant.</div>
-      <select class="option" name="option" id="place">
-        <option value="">Select an answer</option>
-        <option value="alveolar">Alveolar</option>
-        <option value="bilabial">Bilabial</option>
-        <option value="dental">Dental</option>
-        <option value="glottal">Glottal</option>
-        <option value="labio-dental">Labio-dental</option>
-        <option value="post-alveolar">Post-alveolar</option>
-        <option value="palatal">Palatal</option>
-        <option value="velar">Velar</option>
-      </select>
-
-      <button id="generateConsonant" class="next-button" onclick="generateConsonant()">Next</button>
-      <button id="checkQuestion" class="next-button" onclick="verifyOption()">Check</button>
-      <div id="answer" class="answer"></div>
-    </div>
-
+<div class="container">
+  <div class="item-1">
+    <p class="title">IPA Training</p>
   </div>
-  <script src="app.js"></script>
-  <p id="credit">Created by: <a href="http://caikelaurentino.com.br">Caike Laurentino</a><br>
-    Github repo: <a href="https://github.com/caike72/ipa-app">ipa-app</a>
-  </p>
+  <div class="item-2">
+    <div>
+      <p>Select one of the links below to start training:</p>
+      <ul>
+        <li><a href="/manner.html">Manner of articulation</a></li>
+        <li><a href="/place.html">Place of articulation</a></li>
+        <li><a href="/voicing.html">Voicing</a></li>
+        <li><a href="/all.html">All</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="item-3">
+    <p>Feito por <a href="http://caikelaurentino.com.br" target="_blank">Caike Laurentino</a></p>
+  </div>
+</div>
+
+
+
 </body>
 
 </html>
