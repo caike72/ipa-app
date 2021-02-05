@@ -75,3 +75,4 @@ function verifyOption() {
     document.getElementById('answer').innerHTML = `You're wrong! Try again or click the next button.`
   }
 }
+
