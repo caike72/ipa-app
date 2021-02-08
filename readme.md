@@ -18,9 +18,9 @@
 
 # MODO 3 - VOICING
 
-- [] Pensar numa maneira de fazer este modo;
+- [X] Pensar numa maneira de fazer este modo;
 
-- [] Planejar e codar.
+- [X] Planejar e codar.
 
 
 

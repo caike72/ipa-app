@@ -10,6 +10,24 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <title>Learn IPA</title>
 
+  <!-- Primary Meta Tags -->
+  <title>Practice the IPA</title>
+  <meta name="title" content="Practice the IPA">
+  <meta name="description" content="Practice the International Phonetic Alphabet with this aplication.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ipatraining.netlify.app/">
+  <meta property="og:title" content="Practice the IPA">
+  <meta property="og:description" content="Practice the International Phonetic Alphabet with this aplication.">
+  <meta property="og:image" content="">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ipatraining.netlify.app/">
+  <meta property="twitter:title" content="Practice the IPA">
+  <meta property="twitter:description" content="Practice the International Phonetic Alphabet with this aplication.">
+  <meta property="twitter:image" content="">
 </head>
 
 <div class="container">
@@ -19,12 +37,10 @@
   <div class="item-2">
     <div>
       <p>Select one of the links below to start training:</p>
-      <ul>
-        <li><a id="place" href="/place.html?place">Place of articulation</a></li>
-        <li><a id="manner" href="/manner.html?manner">Manner of articulation</a></li>
-        <li><a id="voicing" href="/voicing.html?voicing">Voicing</a></li>
-        <li><a id="all" href="/all.html?all">All</a></li>
-      </ul>
+      <button class="button-voicing" target="_top" onclick="redirectToPlace()">Place of articulation</button>
+      <button class="button-voicing" target="_top" onclick="redirectToManner()">Manner of articulation</button>
+      <button class="button-voicing" target="_top" onclick="redirectToVoicing()">Voicing</button>
+      <button class="button-voicing" target="_top" onclick="redirectToAll()">All</button>
     </div>
   </div>
   <div class="item-3">
@@ -33,7 +49,7 @@
 </div>
 
 
-
+<script src="app.js"></script>
 </body>
 
 </html>
