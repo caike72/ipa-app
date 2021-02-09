@@ -13,9 +13,9 @@ class ConsonantClassification {
 }
 
 let consonants = Array()
-consonants.push(new ConsonantClassification('m', 'labial', 'nasal', true))
-consonants.push(new ConsonantClassification('p', 'labial', 'plosive', false))
-consonants.push(new ConsonantClassification('b', 'labial', 'plosive', true))
+consonants.push(new ConsonantClassification('m', 'bilabial', 'nasal', true))
+consonants.push(new ConsonantClassification('p', 'bilabial', 'plosive', false))
+consonants.push(new ConsonantClassification('b', 'bilabial', 'plosive', true))
 consonants.push(new ConsonantClassification('f', 'labio-dental', 'fricative', false))
 consonants.push(new ConsonantClassification('v', 'labio-dental', 'fricative', true))
 consonants.push(new ConsonantClassification('θ', 'dental', 'fricative', false))
@@ -80,8 +80,6 @@ var generateConsonant = function () {
   } else if (mode === 'voicing') {
     document.getElementById('symbol').innerHTML = `<div id="symbol-voicing" class="question">[${randomConsonant.symbol}]</div>`
     document.getElementById('voicing-btn').innerHTML = `<button class="button-voicing" id="voiced" onclick="isVoiced()">Voiced</button> <button class="button-voicing" id="voiceless" onclick="isVoiceless()">Voiceless</button>`
-    clearAnswer()
-    document.getElementById('answer').value = ''
   } else if (mode === 'manner') {
     document.getElementById('symbol').innerHTML = `<div id="symbol-voicing" class="question">[${randomConsonant.symbol}]</div>`
     clearAnswer()
@@ -124,23 +122,20 @@ if (mode === 'place') {
     }
   }
 } else if (mode === 'voicing') {
+  //VOICING
   function isVoiced() {
     if (randomConsonant.voicing === true) {
       document.getElementById('voiced').style.background = '#01A787'
-      document.getElementById('answer').innerHTML = `You're right! The consonant [${randomConsonant.symbol}] is voiced.`
     } else {
       document.getElementById('voiced').style.background = '#FC6057'
-      document.getElementById('answer').innerHTML = `You're wrong! The consonant [${randomConsonant.symbol}] isn't voiced.`
     }
   }
 
   function isVoiceless() {
     if (randomConsonant.voicing === false) {
       document.getElementById('voiceless').style.background = '#01A787'
-      document.getElementById('answer').innerHTML = `You're right! The consonant [${randomConsonant.symbol}] is voiceless.`
     } else {
       document.getElementById('voiceless').style.background = '#FC6057'
-      document.getElementById('answer').innerHTML = `You're wrong! The consonant [${randomConsonant.symbol}] isn't voiceless.`
     }
   }
 
