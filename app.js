@@ -13,31 +13,31 @@ class ConsonantClassification {
 }
 
 let consonants = Array()
-consonants.push(new ConsonantClassification('m', 'bilabial', 'nasal', true))
-consonants.push(new ConsonantClassification('p', 'bilabial', 'plosive', false))
-consonants.push(new ConsonantClassification('b', 'bilabial', 'plosive', true))
-consonants.push(new ConsonantClassification('f', 'labio-dental', 'fricative', false))
-consonants.push(new ConsonantClassification('v', 'labio-dental', 'fricative', true))
-consonants.push(new ConsonantClassification('θ', 'dental', 'fricative', false))
-consonants.push(new ConsonantClassification('ð', 'dental', 'fricative', true))
-consonants.push(new ConsonantClassification('n', 'alveolar', 'nasal', true))
-consonants.push(new ConsonantClassification('t', 'alveolar', 'plosive', false))
-consonants.push(new ConsonantClassification('d', 'alveolar', 'plosive', true))
-consonants.push(new ConsonantClassification('s', 'alveolar', 'fricative', false))
-consonants.push(new ConsonantClassification('z', 'alveolar', 'fricative', true))
-consonants.push(new ConsonantClassification('l', 'alveolar', 'approximant', true))
-consonants.push(new ConsonantClassification('tʃ', 'post-alveolar', 'plosive', false))
-consonants.push(new ConsonantClassification('dʒ', 'post-alveolar', 'plosive', true))
-consonants.push(new ConsonantClassification('ʃ', 'post-alveolar', 'fricative', false))
-consonants.push(new ConsonantClassification('ʒ', 'post-alveolar', 'fricative', true))
-consonants.push(new ConsonantClassification('r', 'post-alveolar', 'approximant', true))
-consonants.push(new ConsonantClassification('j', 'palatal', 'approximant', true))
-consonants.push(new ConsonantClassification('ŋ', 'velar', 'nasal', true))
-consonants.push(new ConsonantClassification('k', 'velar', 'plosive', false))
-consonants.push(new ConsonantClassification('g', 'velar', 'plosive', true))
-consonants.push(new ConsonantClassification('x', 'velar', 'fricative', false))
-consonants.push(new ConsonantClassification('w', 'velar', 'approximant', true))
-consonants.push(new ConsonantClassification('h', 'glottal', 'fricative', false))
+consonants.push(new ConsonantClassification('m', 'bilabial', 'nasal', 'voiced'))
+consonants.push(new ConsonantClassification('p', 'bilabial', 'plosive', 'voiceless'))
+consonants.push(new ConsonantClassification('b', 'bilabial', 'plosive', 'voiced'))
+consonants.push(new ConsonantClassification('f', 'labio-dental', 'fricative', 'voiceless'))
+consonants.push(new ConsonantClassification('v', 'labio-dental', 'fricative', 'voiced'))
+consonants.push(new ConsonantClassification('θ', 'dental', 'fricative', 'voiceless'))
+consonants.push(new ConsonantClassification('ð', 'dental', 'fricative', 'voiced'))
+consonants.push(new ConsonantClassification('n', 'alveolar', 'nasal', 'voiced'))
+consonants.push(new ConsonantClassification('t', 'alveolar', 'plosive', 'voiceless'))
+consonants.push(new ConsonantClassification('d', 'alveolar', 'plosive', 'voiced'))
+consonants.push(new ConsonantClassification('s', 'alveolar', 'fricative', 'voiceless'))
+consonants.push(new ConsonantClassification('z', 'alveolar', 'fricative', 'voiced'))
+consonants.push(new ConsonantClassification('l', 'alveolar', 'approximant', 'voiced'))
+consonants.push(new ConsonantClassification('tʃ', 'post-alveolar', 'plosive', 'voiceless'))
+consonants.push(new ConsonantClassification('dʒ', 'post-alveolar', 'plosive', 'voiced'))
+consonants.push(new ConsonantClassification('ʃ', 'post-alveolar', 'fricative', 'voiceless'))
+consonants.push(new ConsonantClassification('ʒ', 'post-alveolar', 'fricative', 'voiced'))
+consonants.push(new ConsonantClassification('r', 'post-alveolar', 'approximant', 'voiced'))
+consonants.push(new ConsonantClassification('j', 'palatal', 'approximant', 'voiced'))
+consonants.push(new ConsonantClassification('ŋ', 'velar', 'nasal', 'voiced'))
+consonants.push(new ConsonantClassification('k', 'velar', 'plosive', 'voiceless'))
+consonants.push(new ConsonantClassification('g', 'velar', 'plosive', 'voiced'))
+consonants.push(new ConsonantClassification('x', 'velar', 'fricative', 'voiceless'))
+consonants.push(new ConsonantClassification('w', 'velar', 'approximant', 'voiced'))
+consonants.push(new ConsonantClassification('h', 'glottal', 'fricative', 'voiceless'))
 
 //redireciona url
 function redirectToPlace() {
@@ -85,9 +85,41 @@ var generateConsonant = function () {
     clearAnswer()
     document.getElementById(mode).value = ''
   } else {
-    document.getElementById('symbol').innerHTML = `Can you classify the consonant [${randomConsonant.symbol}]?`
+    document.getElementById('symbol').innerHTML = `<div id="symbol-voicing" class="question">[${randomConsonant.symbol}]</div>`
+
+    document.getElementById('all-opt').innerHTML =
+      `
+    <span id="answer"></span><br />
+    <select class="option" id="voicing">
+      <option value="">Select its voicing</option>
+      <option value="voiced">Voiced</option>
+      <option value="voiceless">Voiceless</option>
+    </select>
+
+    <select class="option" id="place">
+      <option value="">Select its place</option>
+      <option value="alveolar">Alveolar</option>
+      <option value="bilabial">Bilabial</option>
+      <option value="dental">Dental</option>
+      <option value="glottal">Glottal</option>
+      <option value="labio-dental">Labio-dental</option>
+      <option value="post-alveolar">Post-alveolar</option>
+      <option value="palatal">Palatal</option>
+      <option value="velar">Velar</option>
+    </select>
+
+    <select class="option"  id="manner">
+      <option value="">Select its manner</option>
+      <option value="approximant">Approximant</option>
+      <option value="fricative">Fricative</option>
+      <option value="nasal">Nasal</option>
+      <option value="plosive">Plosive</option>
+    </select>
+    `
+
+    document.getElementById('btn-chk').innerHTML = `<button id="checkQuestion" class="next-button" onclick="verifyOptionAll()">Check</button>`
+    document.getElementById('generateConsonant').innerText = 'Next'
     clearAnswer()
-    document.getElementById(mode).value = ''
   }
 }
 
@@ -101,9 +133,9 @@ if (mode === 'place') {
     if (placeValue.value === randomConsonant.place) {
       document.getElementById('symbol-voicing').style.background = '#01A787'
     } else if (randomConsonant.place === undefined) {
-      document.getElementById('answer').innerHTML = `Please, select a consonant first.`
+      document.getElementById('answer').innerText = `Please, select a consonant first.`
     } else if (placeValue.value === '') {
-      document.getElementById('answer').innerHTML = `Please, select an answer first.`
+      document.getElementById('answer').innerText = `Please, select an answer first.`
     } else {
       document.getElementById('symbol-voicing').style.background = '#FC6057'
     }
@@ -114,9 +146,9 @@ if (mode === 'place') {
     if (placeValue.value === randomConsonant.manner) {
       document.getElementById('symbol-voicing').style.background = '#01A787'
     } else if (randomConsonant.manner === undefined) {
-      document.getElementById('answer').innerHTML = `Please, select a consonant first.`
+      document.getElementById('answer').innerText = `Please, select a consonant first.`
     } else if (placeValue.value === '') {
-      document.getElementById('answer').innerHTML = `Please, select an answer first.`
+      document.getElementById('answer').innerText = `Please, select an answer first.`
     } else {
       document.getElementById('symbol-voicing').style.background = '#FC6057'
     }
@@ -124,7 +156,7 @@ if (mode === 'place') {
 } else if (mode === 'voicing') {
   //VOICING
   function isVoiced() {
-    if (randomConsonant.voicing === true) {
+    if (randomConsonant.voicing === 'voiced') {
       document.getElementById('voiced').style.background = '#01A787'
     } else {
       document.getElementById('voiced').style.background = '#FC6057'
@@ -132,7 +164,7 @@ if (mode === 'place') {
   }
 
   function isVoiceless() {
-    if (randomConsonant.voicing === false) {
+    if (randomConsonant.voicing === 'voiceless') {
       document.getElementById('voiceless').style.background = '#01A787'
     } else {
       document.getElementById('voiceless').style.background = '#FC6057'
@@ -140,8 +172,18 @@ if (mode === 'place') {
   }
 
 } else if (mode === 'all') {
-  function verifyOption() {
-    //ALL
+  //ALL
+  function verifyOptionAll() {
+    var voicingValue = document.getElementById('voicing').value
+    var mannerValue = document.getElementById('manner').value
+    var placeValue = document.getElementById('place').value
 
+    if (voicingValue == randomConsonant.voicing && mannerValue == randomConsonant.manner && placeValue == randomConsonant.place) {
+      document.getElementById('answer').innerText = 'Correct!'
+      document.getElementById('symbol-voicing').style.background = '#01A787'
+    } else {
+      document.getElementById('answer').innerText = 'Wrong! :C'
+      document.getElementById('symbol-voicing', 'answer').style.background = '#FC6057'
+    }
   }
 }

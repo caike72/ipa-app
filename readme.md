@@ -26,6 +26,14 @@
 
 # MODO 4 - PLACE, MANNER AND VOICING
 
-- [] Pensar numa maneira de fazer este modo;
+- [x] Pensar numa maneira de fazer este modo;
 
 - [] Planejar e codar.
+
+# OUTROS
+
+- [] Fazer com que os campos de seleção apareçam só quando clicar no botão para iniciar a aplicação;
+
+- [] Fazer um único botão que verifique e que passe para a próxima consoante quando checada;
+
+- [] Fazer ultimos ajustes.
